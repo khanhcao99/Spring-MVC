@@ -6,27 +6,37 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1>List Product
-</h1>
-<a style="text-decoration: none" href="create.jsp">Create Product</a>
-<br/><br>
-<table style="width: 600px" border="1">
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Amount</th>
-        <th colspan="2">Action</th>
-    </tr>
-    <c:forEach items="${requestScope['products']}" var="p">
+<div align="center">
+    <h1>List Product
+    </h1>
+    <button>
+        <a style="text-decoration: none" href="/ProductManager/create">Create Product</a>
+    </button>
+    <br/><br>
+    <form method="get" action="/ProductManager/search">
+        <input value="${name}" type="text" name="search"  placeholder="Tìm kiếm sản phẩm">
+        <button type="submit">Tìm kiếm</button>
+    </form>
+    <br>
+    <table style="width: 600px" border="1">
         <tr>
-            <th>${p.getId()}</th>
-            <th>${p.getName()}</th>
-            <th>${p.getAmount()}</th>
-            <th><a href="/ProductManager/edit-view&id=${requestScope["p"].getId()}">Edit</a></th>
-            <th><a href="/ProductManager/delete">Delete</a></th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th colspan="2">Action</th>
         </tr>
-    </c:forEach>
+        <c:forEach items="${requestScope['products']}" var="p">
+            <tr>
+                <th>${p.getId()}</th>
+                <th>${p.getName()}</th>
+                <th>${p.getAmount()}</th>
+                <th> <button><a href="/ProductManager/edit-view/?id=${p.getId()}">Edit</a></button></th>
+                <th> <button><a href="/ProductManager/delete-view/${p.getId()}">Delete</a></button></th>
+            </tr>
+        </c:forEach>
 
-</table>
+    </table>
+</div>
+
 </body>
 </html>

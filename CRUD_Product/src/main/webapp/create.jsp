@@ -12,33 +12,36 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Tạo sản phẩm</h1>
-<h2><a href="/ProductManager">Quay trở lại</a></h2>
-<form method="post" action="/ProductManager/creat">
-    <table style="width: auto" border="1">
-        <tr>
-            <td>Id</td>
-            <td><input name="id" type="text" value='${requestScope["id"]}'></td>
-        </tr>
-        <tr>
-            <td>Name</td>
-            <td><input name="name" type="text" value='${requestScope["name"]}'></td>
-        </tr>
-        <tr>
-            <td>Amount</td>
-            <td><input name="amount" type="text" value='${requestScope["amount"]}'></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input value="Create" type="submit">
-            </td>
-        </tr>
-    </table>
-</form>
-<h2>
-    <c:if test='${requestScope["message"] != null}'>
-        ${requestScope["message"]}
-    </c:if>
-</h2>
+<div align="center">
+    <h1>Tạo sản phẩm</h1>
+    <h2><a href="/ProductManager">Quay trở lại</a></h2>
+    <form method="post">
+        <table style="width: auto" border="1">
+            <tr>
+                <td>Id</td>
+                <td><input name="id" type="text" value='${requestScope["id"]}'></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input name="name" type="text" value='${requestScope["name"]}'></td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td><input name="amount" type="text" value='${requestScope["amount"]}'></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input value="Create" type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <h2>
+        <c:if test='${requestScope["message"] != null}'>
+            ${requestScope["message"]}
+        </c:if>
+    </h2>
+</div>
+
 </body>
 </html>

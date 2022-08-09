@@ -9,6 +9,11 @@
 </h1>
 <h2>
     ${requestScope['name']}
+
 </h2>
+<form action="/demo2" method="post">
+    <input type="text" name="id">
+    <button type="submit">Click</button>
+</form>
 </body>
 </html>

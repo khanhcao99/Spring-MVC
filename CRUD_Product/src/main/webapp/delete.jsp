@@ -13,9 +13,9 @@
 </head>
 <body>
 <div align="center">
-    <h1>Chỉnh sửa sản phẩm</h1>
+    <h1>Xóa sản phẩm</h1>
     <h2><a href="/ProductManager">Quay trở lại</a></h2>
-    <form method="post">
+    <form method="post" >
         <table style="width: auto" border="1">
             <tr>
                 <td>Id</td>
@@ -23,15 +23,18 @@
             </tr>
             <tr>
                 <td>Name</td>
-                <td><input  name="name" type="text" value='${requestScope["product"].getName()}'></td>
+                <td><input  name="name" type="text" value='${requestScope["product"].getName()}' readonly></td>
             </tr>
             <tr>
                 <td>Amount</td>
-                <td><input name="amount" type="text" value='${requestScope["product"].getAmount()}'></td>
+                <td><input name="amount" type="text" value='${requestScope["product"].getAmount()}' readonly></td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <input value="Cập nhập" type="submit">
+                <td>
+                    <input value="Xóa" type="submit">
+                </td>
+                <td>
+                    Bạn có chắc chắn muốn xóa ?
                 </td>
             </tr>
         </table>
@@ -42,6 +45,5 @@
         </c:if>
     </h2>
 </div>
-
 </body>
 </html>

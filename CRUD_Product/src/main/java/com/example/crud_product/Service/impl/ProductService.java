@@ -28,7 +28,12 @@ public class ProductService implements ICRUDService<Product> {
 
     @Override
     public void delete(int id) {
-        products.remove(id);
+        for (Product product : products){
+            if (product.getId() == id){
+                products.remove(product);
+                break;
+            }
+        }
     }
 
     @Override
@@ -44,5 +49,16 @@ public class ProductService implements ICRUDService<Product> {
             }
         }
         return null;
+    }
+
+    @Override
+    public ArrayList<Product> fillAllByName(String name) {
+        ArrayList<Product> productArrayList = new ArrayList<>();
+        for (Product product : products){
+            if (product.getName().contains(name) ){
+                productArrayList.add(product);
+            }
+        }
+        return productArrayList;
     }
 }

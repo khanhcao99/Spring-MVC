@@ -8,4 +8,6 @@ public interface ICRUDService<E> {
     void delete(int id);
     ArrayList<E> fillAll();
     E findById(int id);
+
+    ArrayList<E> fillAllByName(String name);
 }
